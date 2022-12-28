@@ -5,6 +5,11 @@ html, body {
     height: 100%;
 }
 
+h2 {
+    color: teal;
+    margin: 15px 0;
+}
+
 .img {
     margin: auto;
     margin-top: 0;
@@ -29,6 +34,7 @@ img {
 }
 
 .header {
+    color: teal;
     text-align: center;
     margin: 0;
     border-bottom: 5px solid teal;
@@ -71,4 +77,26 @@ img {
 
 .teal-text {
     color: teal;
+}
+
+
+/* Announcments */
+
+.announcement {
+    color: teal;
+    padding: 10px;
+}
+
+.announcement-heading {
+    padding-bottom: 5px;
+}
+
+.announcement-content {
+    border-bottom: 5px solid teal;
+    padding-left: 5%;
+}
+
+.teal-link {
+    color: teal;
+    font-weight: bold;
 }
