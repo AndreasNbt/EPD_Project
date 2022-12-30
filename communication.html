@@ -23,7 +23,44 @@
             </div>
             
             <div class="description-container">  
-                
+                <div class="announcement"> 
+                    <div class="announcement-heading">
+                        <h2>Αποστολή email μέσω web φόρμας</h2>
+                    </div>
+                    
+
+                    <form action="mailto:tutor@csd.auth.test.gr">
+                        <div class="announcement-content flex">
+                            <div class="flex-column">
+                                <label class="label" for="#sender"> <strong>Αποστολέας:</strong> </label>
+                                <label class="label" for="#subject"><strong>Θέμα:</strong></label>
+                                <label class="label" for="#content"><strong>Κείμενο:</strong></label>
+                            </div>
+                            
+                            <div class="flex-column inputs-container">
+                                <input class="input" id="sender" type="text">
+                                <input class="input" id="subject" type="text">
+                                <textarea class="input" cols="15" rows="8"></textarea>
+                            </div>
+                            
+                           <div class="button-container">
+                                <button class="button" type="submit"> OK </button>
+                           </div>
+                            
+                        </div>
+                    </form>
+                </div>
+
+                <div class="announcement"> 
+                    <div class="announcement-heading">
+                        <h2>Αποστολή email μέσω email διεύθυνσης</h2>
+                    </div>
+                    
+                    <div class="announcement-content flex-column">
+                        <p>Ενναλακτικά, μπορείτε να επικοινωνήσετε με τον διδάσκοντα στέλνοντας ένα email στην παρακάτω διεύθυνση:</p>
+                        <a class="teal-link mb" href="mailto:tutor@csd.auth.test.gr">tutor@csd.auth.test.gr</a>
+                    </div>
+                </div>
             </div>
         </div>
 
