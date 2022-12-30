@@ -95,11 +95,6 @@ img {
     width: 75%;
 }
 
-
-
-
-/* Announcments */
-
 .announcement {
     padding: 10px;
 }
@@ -113,14 +108,11 @@ img {
     padding-left: 5%;
 }
 
-
-
 .top {
     text-align: right;
     padding-top: 5%;
     padding-right: 11%;
 }
-
 
 .label {
     margin: 5px;
@@ -140,7 +132,6 @@ img {
 }
 
 .button-container {
-    display: flex;
     justify-content: center;
     align-items: center;
     width: 40%;
