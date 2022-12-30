@@ -109,6 +109,7 @@ img {
 }
 
 .announcement-content {
+    border-bottom: 5px solid teal;
     padding-left: 5%;
 }
 
