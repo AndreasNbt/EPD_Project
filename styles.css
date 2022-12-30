@@ -6,7 +6,6 @@ html, body {
 }
 
 h2 {
-    color: teal;
     margin: 15px 0;
 }
 
@@ -17,8 +16,15 @@ h2 {
 }
 
 img {
-    border: 1px solid teal;
     border-radius: 5%;
+}
+
+.thin-border {
+    border: 2px solid teal;
+}
+
+.big-border {
+    border: 5px solid teal;
 }
 
 .flex {
@@ -30,6 +36,22 @@ img {
     flex-direction: column;
 }
 
+.teal {
+    color: teal;
+}
+
+.lavender {
+    color: lavender;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.left100 {
+    position: relative;
+    left: 100px;
+}
 
 .content {
     display: flex;
@@ -40,7 +62,6 @@ img {
 .header {
     text-align: center;
     margin: 0;
-    border-bottom: 5px solid teal;
 }
 
 .main {
@@ -48,9 +69,8 @@ img {
 }
 
 .link-container {
-    border-right: 2px solid teal;
     background-color: teal;
-    height: 800px;
+    height: 40%;
     margin: 30px;
     padding: 1%;
     padding-left: 2%;
@@ -58,7 +78,6 @@ img {
 }
 
 .link {
-    color: lavender;
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 30px;
@@ -66,7 +85,6 @@ img {
 }
 
 .description-container {
-    border: 2px solid teal;
     font-size: 21px;
     margin: 30px;
     height: auto;
@@ -77,15 +95,12 @@ img {
     width: 75%;
 }
 
-.teal-text {
-    color: teal;
-}
+
 
 
 /* Announcments */
 
 .announcement {
-    color: teal;
     padding: 10px;
 }
 
@@ -94,14 +109,10 @@ img {
 }
 
 .announcement-content {
-    border-bottom: 5px solid teal;
     padding-left: 5%;
 }
 
-.teal-link {
-    color: teal;
-    font-weight: bold;
-}
+
 
 .top {
     text-align: right;
@@ -109,13 +120,6 @@ img {
     padding-right: 11%;
 }
 
-.top-link {
-    color: teal;
-    font-size: 22px;
-    font-weight: bold;
-    position: relative;
-    left: 100px;
-}
 
 .label {
     margin: 5px;
@@ -143,9 +147,7 @@ img {
 }
 
 .button {
-    border: 2px solid teal;
     border-radius: 50%;
-    color: teal;
     font-size: 18px;
     width: 30%;
     height: 30%;
@@ -155,7 +157,7 @@ img {
     cursor: pointer;
 }
 
-.ordered-list,.m0 {
+.m0 {
     margin: 0;
 }
 
