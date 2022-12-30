@@ -38,7 +38,6 @@ img {
 }
 
 .header {
-    color: teal;
     text-align: center;
     margin: 0;
     border-bottom: 5px solid teal;
@@ -46,10 +45,6 @@ img {
 
 .main {
     height: 100%;
-}
-
-.main-container {
-    
 }
 
 .link-container {
@@ -170,4 +165,9 @@ img {
 
 .ml {
     margin-left: 40px;
+}
+
+.important-text {
+    color: rgb(133, 50, 50);
+    font-weight: bold;
 }
