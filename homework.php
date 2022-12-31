@@ -18,72 +18,50 @@
                 include "links.php";
             ?>
             <div class="description-container thin-border">  
-                <div class="announcement teal"> 
-                    <div id="return" class="announcement-heading">
-                        <h2 class="teal">1η Ομαδική Εργασία</h2>
-                    </div>
-                
-                    <div class="announcement-content flex">
-                        <div class="flex-column">
+            <?php
+                    include("PHP_Back_End/db_connection.php");
+                    $sql = "SELECT id, goals, location, deliverables, deadline FROM projects;";
+                    $res = $con->query($sql);
+
+                    while ($project = mysqli_fetch_row($res)) {
+                        echoAnnouncement($project[0], $project[1], $project[2], $project[3], $project[4]);
+                    }
+
+                    mysqli_close($con);
+
+                    function echoAnnouncement($id, $goals, $filepath,$deliverables,$deadline) {
+                    echo "<div class='announcement teal'> 
+                            <div id='return' class='announcement-heading'>
+                                <h2 class='teal'>Εργασία $id</h2>
+                            </div>
+                        
+                            <div class='announcement-content flex'>
+                                <div class='flex-column'>
                                 <p> <strong>Στόχοι:</strong> Οι στόχοι της εργασίας είναι </p>
                                 <div>
-                                    <ol class="m0">
-                                        <li>Καλύτερη κατανόηση των εννοιών που παρουσιάστηκαν στις διαλέξεις.</li>
-                                        <li>Κατασκευή μιας πρώτης οντολογίας με RDFS με χρήση όλων των βασικών εννοιών της (classes, properties...</li>
-                                        <li>Χρήση SPARQL για την κατασκευή ερωτημάτων πάνω στην οντολογία</li>
+                                    <ol class='m0'>
+                                        $goals
                                     </ol>
                                 </div>
                                 
                                 <p> <strong>Εκφώνηση:</strong> </p>
                                 <div>
-                                    <p class="m0 ml">    Κατεβάστε την εκφώνηση της εργασίας από <a class="important-text" href="" download="Project1.docx">εδώ</a>.</p>
+                                    <p class='m0 ml'>    Κατεβάστε την εκφώνηση της εργασίας από <a class='important-text' href='' download=$filepath>εδώ</a>.</p>
                                 </div>
                                 
                                 <p> <strong>Παραδοτέα:</strong> </p>
-                                <div class="mb">
-                                    <ol class="m0">
-                                        <li>Σύντομη γραπτή αναφορά σε Word όπου περιγράφετε την διαδικασία υλοποίησης της οντολογίας σας.</li>
-                                        <li>Το αρχείο της οντολογίας.</li>
-                                        <li>Τα SPARQL ερωτήματα που χρησιμοποιήσατε μαζί με τα αντίστοιχα αποτελέσματα.</li>
+                                <div class='mb'>
+                                    <ol class='m0'>
+                                        $deliverables
                                     </ol>
                                 </div>
                                 
-                                <p class="important-text">Ημερομηνία παράδοσης: 24/10/22</p> 
+                                <p class='important-text'>Ημερομηνία παράδοσης: $deadline</p> 
                             </div>
-                            
-                </div>
-
-                <div class="announcement teal"> 
-                    <div class="announcement-heading">
-                        <h2 class="teal">2η Ομαδική Εργασία</h2>
-                    </div>
-                
-                    <div class="announcement-content flex">
-                        <div class="flex-column">
-                            <p> <strong>Στόχοι:</strong> Οι στόχοι της εργασίας είναι </p>
-                            <div>
-                                <ol class="ordered-list">
-                                    <li>Επέκταση της οντολογίας της 1ης εργασίας με τη χρήση της OWL.</li>
-                                    <li>Κατανόηση και σωστή χρήση των εκφραστικών δυνατοτήτων που παρέχει η OWL</li>
-                                </ol>
-                            </div>
-                                
-                            <p> <strong>Εκφώνηση:</strong> </p>
-                            <div>
-                                <p class="m0 ml">    Κατεβάστε την εκφώνηση της εργασίας από <a class="important-text" href="" download="Project2.docx">εδώ</a>.</p>
-                            </div>
-                                
-                            <p> <strong>Παραδοτέα:</strong> </p>
-                            <div class="mb">
-                                <ol class="ordered-list">
-                                    <li>Σύντομη γραπτή αναφορά σε Word όπου περιγράφετε την διαδικασία επέκτασης της οντολογίας σας και το πως αξιοποιήσατε τις επιπλέον δυνατότητες που παρέχει η OWL σε σχέση με την RDFS.</li>
-                                    <li>Το αρχείο της οντολογίας.</li>
-                                </ol>
-                            </div>
-
-                            <p class="important-text">Ημερομηνία παράδοσης: 2/12/22</p> 
-                                
-                        </div>
+                          </div>";
+                    }
+                    
+                ?>
                 </div>
 
                 <div class="top">

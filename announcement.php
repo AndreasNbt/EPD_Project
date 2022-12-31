@@ -21,31 +21,33 @@
             ?>
             
             <div class="description-container thin-border">  
-               
-                <div class="announcement teal"> 
-                    <div class="announcement-heading">
-                        <h2 class="teal">Αναβολή διάλεξης</h2>
-                    </div>
-                    
-                    <div class="announcement-content">
-                        <p> <strong>Ημερομηνία</strong>: 25/10/2022</p>
-                        <p> <strong>Θέμα</strong>: Αναβολή επόμενης διάλεξης</p>
-                        <p>Η διάλεξη της 27/10 αναβάλλεται λόγω προσωπικού κωλύματος του διδάσκοντα. Θα υπάρξει περαιτέρω ενημέρωση σχετικά με την αναπλήρωση της.</p>
-                    </div>
-                </div>
+                <?php
+                    include("PHP_Back_End/db_connection.php");
+                    $sql = "SELECT date, subject, content FROM announcements;";
+                    $res = $con->query($sql);
 
-                <div class="announcement teal"> 
-                    <div class="announcement-heading">
-                        <h2 class="teal">Πρώτη εργασία του μαθήματος</h2>
-                    </div>
-                    
-                    <div class="announcement-content">
-                        <p><strong>Ημερομηνία</strong>: 15/11/2022</p>
-                        <p><strong>Θέμα</strong>: Ανακοίνωση πρώτης εργασίας</p>
-                        <p>Ανακοινώθηκε στην σελίδα <a class="teal bold" href="homework.html">Εργασίες</a> η πρώτη εργασία του μαθήματος.</p>
-                    </div>
-                </div>
+                    while ($announcement = mysqli_fetch_row($res)) {
+                        echoAnnouncement($announcement[0], $announcement[1], $announcement[2]);
+                    }
 
+                    mysqli_close($con);
+
+                    function echoAnnouncement($date, $subject, $content) {
+                    echo "<div class='announcement teal'> 
+                            <div class='announcement-heading'>
+                                <h2 class='teal'>$subject</h2>
+                            </div>
+                            
+                            <div class='announcement-content'>
+                                <p> <strong>Ημερομηνία</strong>: $date</p>
+                                <p> <strong>Θέμα</strong>: $subject</p>
+                                <p>$content</p>
+                            </div>
+                          </div>";
+                    }
+                    
+                ?>
+                              
                 <div class="top">
                     <a class="link left100 teal" href="#header">Top</a>
                 </div>                
