@@ -27,10 +27,9 @@
         }
         else {
 
-            $sql = "SELECT * 
-                    FROM user
-                    WHERE (user.loginame = '$email' 
-                        AND user.password = '$password' ";
+            $sql = "SELECT * FROM `users`
+                    WHERE '$email' = users.loginame
+                        AND '$password' = users.password;";
 
             $res = $con->query($sql);
 
@@ -39,8 +38,7 @@
                 $row = mysqli_fetch_row($res);
 
                 $_SESSION['ID'] = $row[0];
-                $_SESSION['Username'] = $row[1];
-                $_SESSION['role'] = $row[4];
+                $_SESSION['role'] = $row[5];
 
                 echo "$_SESSION[role]";
 
@@ -50,13 +48,13 @@
 
             }
             else {
-                header("Location: ../login.php?error=User not found");
+                header("Location: ../index.php?error=UserNotFound");
                 exit();
             }
         }
     }
     else {
-        header("Location: ../login.php");
+        header("Location: ../index.php");
         exit();
     }
 
