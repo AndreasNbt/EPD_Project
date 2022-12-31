@@ -24,12 +24,12 @@
                     $res = $con->query($sql);
 
                     while ($project = mysqli_fetch_row($res)) {
-                        echoAnnouncement($project[0], $project[1], $project[2], $project[3], $project[4]);
+                        echoProject($project[0], $project[1], $project[2], $project[3], $project[4]);
                     }
 
                     mysqli_close($con);
 
-                    function echoAnnouncement($id, $goals, $filepath,$deliverables,$deadline) {
+                    function echoProject($id, $goals, $filepath,$deliverables,$deadline) {
                     echo "<div class='announcement teal'> 
                             <div id='return' class='announcement-heading'>
                                 <h2 class='teal'>Εργασία $id</h2>

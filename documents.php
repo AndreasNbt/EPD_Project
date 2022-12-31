@@ -19,32 +19,35 @@
             <?php 
                 include "links.php";
             ?>
-            <div class="description-container thin-border">  
-                <div class="announcement teal"> 
-                    <div class="announcement-heading">
-                        <h2 class="teal">Υλικό για RDFS</h2>
-                    </div>
-                
-                    <div class="announcement-content flex">
-                        <div class="flex-column">
-                                <p> <strong>Περιγραφή:</strong> Διαφάνειες που χρησιμοποιήθηκαν στις διαλέξεις για την RDFS. </p>
-                                <a class="mb teal bold" href="#" download="RDF_Schema.pdf">Download</a>
-                        </div>
-                            
-                </div>
+            <div class="description-container thin-border">
+                <?php
+                        include("PHP_Back_End/db_connection.php");
+                        $sql = "SELECT title, description, location FROM documents;";
+                        $res = $con->query($sql);
 
-                <div class="announcement teal"> 
-                    <div class="announcement-heading">
-                        <h2 class="teal">Υλικό για SPARQL</h2>
-                    </div>
-                
-                    <div class="announcement-content flex">
-                        <div class="flex-column">
-                                <p> <strong>Περιγραφή:</strong> Διαφάνειες που χρησιμοποιήθηκαν στις διαλέξεις για την SPARQL. </p>
-                                <a class="mb teal bold" href="#" download="SPARQL.pdf">Download</a>
-                        </div>
-                            
-                </div>
+                        while ($document = mysqli_fetch_row($res)) {
+                            echoDocument($document[0], $document[1], $document[2]);
+                        }
+
+                        mysqli_close($con); 
+                        
+                        function echoDocument($title, $description, $filepath) {
+                            echo "
+                                <div class='announcement teal'> 
+                                    <div class='announcement-heading'>
+                                        <h2 class='teal'>$title</h2>
+                                    </div>
+                                
+                                    <div class='announcement-content flex'>
+                                        <div class='flex-column'>
+                                                <p> <strong>Περιγραφή:</strong> $description </p>
+                                                <a class='mb teal bold' href='#' download=$filepath>Download</a>
+                                        </div>
+                                            
+                                </div>";
+                        }
+
+                ?>
 
                 <div class="top">
                     <a class="link left100 teal" href="#header">Top</a>
