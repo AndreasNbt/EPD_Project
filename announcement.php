@@ -11,16 +11,14 @@
     
     <div class="main flex-column">
 
-        <div id="header" class="header teal big-border"> <h1> Ανακοινώσεις </h1> </div>
+        <div id="header" class="header teal big-border=bottom"> 
+            <h1> Ανακοινώσεις </h1> 
+        </div>
         
         <div class="content">
-            <div class="link-container flex-column thin-border">
-                <a class="link lavender mb"" href="index.html">Αρχική Σελίδα</a>
-                <a class="link lavender mb"" href="#">Ανακοινώσεις</a>
-                <a class="link lavender mb"" href="communication.html">Επικοινωνία</a>
-                <a class="link lavender mb"" href="documents.html">Έγγραφα Μαθήματος</a>
-                <a class="link lavender mb"" href="homework.html">Εργασίες</a>
-            </div>
+            <?php 
+                include "links.php";
+            ?>
             
             <div class="description-container thin-border">  
                

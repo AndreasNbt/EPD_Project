@@ -27,6 +27,10 @@ img {
     border: 5px solid teal;
 }
 
+.big-border-bottom {
+    border-bottom: 5px solid teal;
+}
+
 .flex {
     display: flex;
 }
@@ -46,6 +50,10 @@ img {
 
 .bold {
     font-weight: bold;
+}
+
+.center {
+    text-align: center;
 }
 
 .left100 {
@@ -161,7 +169,42 @@ img {
     margin-left: 40px;
 }
 
+.mt {
+    margin-top: 20px;
+}
+
 .important-text {
     color: rgb(133, 50, 50);
     font-weight: bold;
+}
+
+.login-container {
+    position: relative;
+    bottom: 100px;
+    margin: auto;
+    padding: 20px;
+    width: 22%;
+    height: 45%;
+    align-items: center;
+}
+
+.inputs-container {
+    width: 80%;
+}
+
+
+.input-field {
+    padding: 8px;
+    text-align: center;
+    width: 70%;
+    margin: 15px;
+}
+
+.sign-btn {
+    border-radius: 10%;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 6px 15px;
+    margin-top: 80px;
+    width: 40%;
 }
