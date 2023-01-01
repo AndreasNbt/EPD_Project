@@ -31,7 +31,7 @@
                 ?>
             <?php
                     include("PHP_Back_End/db_connection.php");
-                    $sql = "SELECT id, goals, location, deliverables, deadline FROM projects;";
+                    $sql = "SELECT id, goals, filepath, deliverables, deadline FROM projects;";
                     $res = $con->query($sql);
 
                     while ($project = mysqli_fetch_row($res)) {
@@ -44,6 +44,14 @@
                     echo "<div class='announcement teal'> 
                             <div class='announcement-heading'>
                                 <h2 class='teal'>Εργασία $id</h2>
+                                <div class='flex'>
+                                    <form action='tutor_update_project.php' action='get'>
+                                        <button class='announcement-button' name='id' value=$id><a class='important-text'>Eπεξεργασία</a></button>
+                                    </form>
+                                    <form action='PHP_Back_End/delete_project.php' action='get'>
+                                        <button class='announcement-button' name='id' value=$id><a class='important-text'>Διαγραφή</a></button>
+                                    </form>
+                                </div>
                             </div>
                         
                             <div class='announcement-content big-border-bottom flex'>

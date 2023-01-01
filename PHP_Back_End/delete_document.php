@@ -11,6 +11,6 @@ include 'db_connection.php';
     $con->query($sql);
     $con -> close();
 
-    header("Location: ../announcement.php");
+    header("Location: ../documents.php");
 
 ?>

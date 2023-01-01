@@ -9,7 +9,7 @@ if (isset($_POST['goals']) && isset($_POST['path']) && isset($_POST['deliverable
     $deliverables = $_POST['deliverables'];
     $deadline = $_POST['deadline'];
 
-    $sql = "INSERT INTO projects(goals, location, deliverables, deadline)
+    $sql = "INSERT INTO projects(goals, filepath, deliverables, deadline)
             VALUES ('$goals', '$path', '$deliverables', '$deadline')";
 
         $con->query($sql);

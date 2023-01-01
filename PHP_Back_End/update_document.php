@@ -11,7 +11,7 @@ if (isset($_POST['title']) && isset($_POST['path']) && isset($_POST['description
     $description = $_POST['description'];
 
     $sql = "UPDATE documents
-            SET title='$title', path='$path', description='$description'
+            SET title='$title', filepath='$path', description='$description'
             WHERE documents.ID = $id";
 
     $con->query($sql);

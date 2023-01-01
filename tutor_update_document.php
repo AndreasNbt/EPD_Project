@@ -15,7 +15,7 @@
 
         $documentID = $_GET['id'];
 
-        $sql = "SELECT title, location, description
+        $sql = "SELECT title, filepath, description
                 FROM documents
                 WHERE documents.ID = $documentID";
 
@@ -47,7 +47,7 @@
                             <br>
                             <div class="flex-column">
                                 <label for="path">Τοποθεσία Αρχείου</label>
-                                <?php echo" <input id='path' type='date' class='input-field thin-border announcement-field center' name='path' value='$path' required>" ?>
+                                <?php echo" <input id='path' type='text' class='input-field thin-border announcement-field center' name='path' value='$path' required>" ?>
                             </div>
                             <br>
                             <div class="flex-column">
