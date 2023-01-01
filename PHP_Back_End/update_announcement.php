@@ -5,17 +5,10 @@ include 'db_connection.php';
 
 if (isset($_POST['subject']) && isset($_POST['date']) && isset($_POST['content'])) {
 
-    function validate($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
     $id = $_POST['id'];
-    $subject = validate($_POST['subject']);
-    $date = validate($_POST['date']);
-    $content = validate($_POST['content']);
+    $subject = trim($_POST['subject']);
+    $date = $_POST['date'];
+    $content = trim($_POST['content']);
 
     if (empty($subject)) {
         header("Location: ../login.php?error=Subject is required");

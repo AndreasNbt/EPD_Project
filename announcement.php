@@ -64,8 +64,7 @@
                                 <p>$content</p>
                             </div>
                           </div>";
-                    }
-                    
+                    }    
                 ?>
                               
                 <div class="top">

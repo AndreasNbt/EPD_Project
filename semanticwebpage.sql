@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2022 at 11:38 PM
+-- Generation Time: Jan 01, 2023 at 05:20 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -34,47 +34,14 @@ CREATE TABLE `announcements` (
   `Content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `documents`
+-- Dumping data for table `announcements`
 --
 
-CREATE TABLE `documents` (
-  `ID` int(11) NOT NULL,
-  `Title` varchar(30) NOT NULL,
-  `Description` text NOT NULL,
-  `Location` tinytext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `projects`
---
-
-CREATE TABLE `projects` (
-  `ID` int(11) NOT NULL,
-  `Goals` text NOT NULL,
-  `Location` int(11) NOT NULL,
-  `Deliverables` text NOT NULL,
-  `Deadline` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `ID` int(11) NOT NULL,
-  `FirstName` varchar(30) NOT NULL,
-  `LastName` varchar(30) NOT NULL,
-  `Loginame` varchar(50) NOT NULL,
-  `Password` varchar(30) NOT NULL,
-  `Role` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `announcements` (`ID`, `Date`, `Subject`, `Content`) VALUES
+(1, '2022-10-25', 'Αναβολή επόμενης διάλεξης', 'Η διάλεξη της 27/10 αναβάλλεται λόγω προσωπικού κωλύματος του διδάσκοντα. Θα υπάρξει περαιτέρω ενημέρωση σχετικά με την αναπλήρωση της.'),
+(2, '2022-11-18', 'Ανακοίνωση πρώτης εργασίας', 'Ανακοινώθηκε στην σελίδα <a class=\"teal link\" href=\"homework.php\">Εργασίες</a> η πρώτη εργασία του μαθήματος.'),
+(3, '2022-12-20', 'Ανακοίνωση δεύτερης εργασίας', 'Ανακοινώθηκε στην σελίδα <a class=\"teal link\"; href=\"homework.php\">Εργασίες</a> η δεύτερη εργασία του μαθήματος.');
 
 --
 -- Indexes for dumped tables
@@ -87,25 +54,6 @@ ALTER TABLE `announcements`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `documents`
---
-ALTER TABLE `documents`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `projects`
---
-ALTER TABLE `projects`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Loginame` (`Loginame`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -113,25 +61,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `documents`
---
-ALTER TABLE `documents`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `projects`
---
-ALTER TABLE `projects`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
