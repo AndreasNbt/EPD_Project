@@ -33,20 +33,28 @@
                 ?>
                 <?php
                         include("PHP_Back_End/db_connection.php");
-                        $sql = "SELECT title, description, filepath FROM documents;";
+                        $sql = "SELECT id, title, description, filepath FROM documents;";
                         $res = $con->query($sql);
 
                         while ($document = mysqli_fetch_row($res)) {
-                            echoDocument($document[0], $document[1], $document[2]);
+                            echoDocument($document[0], $document[1], $document[2], $document[3]);
                         }
 
                         mysqli_close($con); 
                         
-                        function echoDocument($title, $description, $file) {
+                        function echoDocument($id, $title, $description, $file) {
                             echo "
                                 <div class='announcement teal'> 
                                     <div class='announcement-heading'>
                                         <h2 class='teal'>$title</h2>
+                                        <div class='flex'>
+                                            <form action='tutor_update_document.php' action='get'>
+                                                <button class='announcement-button' name='id' value=$id><a class='important-text'>Eπεξεργασία</a></button>
+                                            </form>
+                                            <form action='PHP_Back_End/delete_document.php' action='get'>
+                                                <button class='announcement-button' name='id' value=$id><a class='important-text'>Διαγραφή</a></button>
+                                            </form>
+                                        </div>
                                     </div>
                                 
                                     <div class='announcement-content big-border-bottom flex'>
