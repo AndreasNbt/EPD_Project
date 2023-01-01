@@ -19,6 +19,10 @@ img {
     border-radius: 5%;
 }
 
+input:focus, textarea:focus {
+    outline-color: teal;
+}
+
 .thin-border {
     border: 2px solid teal;
 }
@@ -38,6 +42,10 @@ img {
 .flex-column {
     display: flex;
     flex-direction: column;
+}
+
+.jc-center {
+    justify-content: center;
 }
 
 .teal {
@@ -153,8 +161,12 @@ img {
     height: 30%;
 }
 
-.button:hover {
+button:hover,.button:hover {
     cursor: pointer;
+}
+
+.p0 {
+    padding: 0;
 }
 
 .m0 {
@@ -195,7 +207,6 @@ img {
 
 .input-field {
     padding: 8px;
-    text-align: center;
     width: 70%;
     margin: 15px;
 }
@@ -208,3 +219,9 @@ img {
     margin-top: 80px;
     width: 40%;
 }
+
+.announcement-field {
+    display: block;
+    margin: 10px auto;
+}
+

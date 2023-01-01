@@ -20,12 +20,17 @@
                     <h2 class="teal mb">Συμπληρώστε τα στοιχεία σας</h2>
                     <div class="flex-column inputs-container mt">
                         <form action="PHP_Back_End/loginb.php" method="post">
-                            <i class="fa-solid fa-lg fa-envelope icon big-icon"></i>
-                            <input type="text" class="input-field thin-border" placeholder="Email" name="email" required>
+                            <div class="flex-column">
+                                <label for="email">Email</label>
+                                <input id="email" type="text" class="input-field announcement-field thin-border" name="email" required>
+                            </div>
                             <br>
-                            <i class="fa-solid fa-lg fa-lock icon big-icon"></i>
-                            <input type="password" class="input-field thin-border" placeholder="Password" name="password" required>
+                            <div class="flex-column">
+                                <label for="password">Κωδικός</label>
+                                <input id="password" type="password" class="input-field announcement-field thin-border" name="password" required>
+                            </div>
                             <br>
+                           
                             <button class="sign-btn thin-border teal" type="submit">Σύνδεση</button>
                         </form>
                     </div>

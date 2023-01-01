@@ -11,7 +11,7 @@
     
     <div class="main flex-column">
 
-        <div id="header" class="header teal big-border=bottom"> 
+        <div id="header" class="header teal big-border-bottom"> 
             <h1> Ανακοινώσεις </h1> 
         </div>
         
@@ -20,7 +20,18 @@
                 include "links.php";
             ?>
             
-            <div class="description-container thin-border">  
+            <div class="description-container thin-border"> 
+                <?php
+                    session_start();
+                    if ($_SESSION['role'] === 'Tutor' ) {
+                    echo "<div class='announcement'>
+                            <div class='announcement-heading'>
+                                <h3> <a class='important-text' href='new_announcement.php'>Προσθήκη νέας ανακοίνωσης</a> </h3>
+                            </div>
+                            <div class='announcement-content flex'></div>
+                         </div>";
+                    }
+                ?>
                 <?php
                     include("PHP_Back_End/db_connection.php");
                     $sql = "SELECT date, subject, content FROM announcements;";
