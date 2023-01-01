@@ -21,12 +21,11 @@
             ?>
             
             <div class="description-container thin-border">  
-                <div class="announcement teal"> 
+                <div class="announcement communication-block big-border-bottom teal"> 
                     <div class="announcement-heading">
                         <h2 class="teal">Αποστολή email μέσω web φόρμας</h2>
                     </div>
                     
-
                     <form action="mailto:tutor@csd.auth.test.gr">
                         <div class="announcement-content flex">
                             <div class="flex-column">
@@ -36,20 +35,18 @@
                             </div>
                             
                             <div class="flex-column inputs-container">
-                                <input class="input" id="sender" type="text">
-                                <input class="input" id="subject" type="text">
-                                <textarea class="input" cols="15" rows="8"></textarea>
+                                <input class="input comm-field" id="sender" type="text">
+                                <input class="input comm-field" id="subject" type="text">
+                                <textarea class="input comm-field" cols="15" rows="8"></textarea>
                             </div>
                             
                            <div class="button-container flex">
-                                <button class="button teal thin-border" type="submit"> OK </button>
-                           </div>
-                            
+                                <button class="button send-button teal bold thin-border" type="submit"> Αποστολή </button>
+                           </div>   
                         </div>
                     </form>
                 </div>
-
-                <div class="announcement teal"> 
+                <div class="announcement big-border-bottom large-pad-tb teal"> 
                     <div class="announcement-heading">
                         <h2 class="teal">Αποστολή email μέσω email διεύθυνσης</h2>
                     </div>

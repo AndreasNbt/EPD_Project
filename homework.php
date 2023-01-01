@@ -11,7 +11,7 @@
     
     <div class="main flex-column">
 
-        <div class="header teal big-border-bottom"> <h1> Εργασίες </h1> </div>
+        <div id="header" class="header teal big-border-bottom"> <h1> Εργασίες </h1> </div>
         
         <div class="content">
             <?php 
@@ -25,7 +25,7 @@
                             <div class='announcement-heading'>
                                 <h4> <a class='important-text' href='tutor_new_project.php'>Προσθήκη νέας εργασίας</a> </h4>
                             </div>
-                            <div class='announcement-content flex'></div>
+                            <div class='announcement-content big-border-bottom flex'></div>
                          </div>";
                     }
                 ?>
@@ -42,11 +42,11 @@
 
                     function echoProject($id, $goals, $file,$deliverables,$deadline) {
                     echo "<div class='announcement teal'> 
-                            <div id='return' class='announcement-heading'>
+                            <div class='announcement-heading'>
                                 <h2 class='teal'>Εργασία $id</h2>
                             </div>
                         
-                            <div class='announcement-content flex'>
+                            <div class='announcement-content big-border-bottom flex'>
                                 <div class='flex-column'>
                                 <p> <strong>Στόχοι:</strong> Οι στόχοι της εργασίας είναι </p>
                                 <div>

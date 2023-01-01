@@ -10,7 +10,7 @@
         $content = $_POST['content'];
 
         $sql = "INSERT INTO announcements(subject, date, content)
-                VALUES ('$subject', $date, '$content')";
+                VALUES ('$subject', '$date', '$content')";
 
         $con->query($sql);
         $con -> close();

@@ -27,7 +27,7 @@
                             <div class='announcement-heading'>
                                 <h4> <a class='important-text' href='tutor_new_document.php'>Προσθήκη νέου εγγράφου</a> </h4>
                             </div>
-                            <div class='announcement-content flex'></div>
+                            <div class='announcement-content big-border-bottom flex'></div>
                          </div>";
                     }
                 ?>
@@ -49,7 +49,7 @@
                                         <h2 class='teal'>$title</h2>
                                     </div>
                                 
-                                    <div class='announcement-content flex'>
+                                    <div class='announcement-content big-border-bottom flex'>
                                         <div class='flex-column'>
                                                 <p> <strong>Περιγραφή:</strong> $description </p>
                                                 <a class='mb teal bold' href='$file' download>Download</a>

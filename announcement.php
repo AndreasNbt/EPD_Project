@@ -28,7 +28,7 @@
                             <div class='announcement-heading'>
                                 <h4> <a class='important-text' href='tutor_new_announcement.php'>Προσθήκη νέας ανακοίνωσης</a> </h4>
                             </div>
-                            <div class='announcement-content flex'></div>
+                            <div class='announcement-content big-border-bottom flex'></div>
                          </div>";
                     }
                 ?>
@@ -58,8 +58,8 @@
                                 
                             </div>
                             
-                            <div class='announcement-content'>
-                                <p> <strong>Ημερομηνία</strong>: $date</p>
+                            <div class='announcement-content big-border-bottom'>
+                                <p> <strong>Ημερομηνία</strong>:$date</p>
                                 <p> <strong>Θέμα</strong>: $subject</p>
                                 <p>$content</p>
                             </div>
