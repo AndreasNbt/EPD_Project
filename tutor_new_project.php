@@ -12,27 +12,31 @@
     <div class="main flex-column">
 
         <div class="header teal big-border-bottom"> 
-            <h1> Προσθέστε ένα νέο έγγραφο </h1> 
+            <h1> Προσθέστε μία νέα εργασία </h1> 
         </div>
         
             <div class="content flex jc-center"> 
                 <div class="description-container flex-column teal big-border center p0">  
                     <h2 class="teal mb">Συμπληρώστε τα πεδία</h2>
                     <div class="flex-column mt">
-                        <form action="PHP_Back_End/add_document.php" method="post">
+                        <form action="PHP_Back_End/add_project.php" method="post">
                             <div class="flex-column">
-                                <label for="title">Τίτλος</label>
-                                <input id="title" type="text" class="input-field announcement-field thin-border" name="title" required>
+                                <label for="goals">Στόχοι</label>
+                                <textarea id="goals" type="text" class="input-field announcement-field thin-border" name="goals" cols="30" rows="8" required></textarea>
                             </div>
                             <br>
                             <div class="flex-column">
-                                <label for="filepath">Αρχείο</label>
-                                <input id="filepath" type="text" class="input-field thin-border announcement-field center" name="path" required>
+                                <label for="path">Αρχείο Εκφώνησης</label>
+                                <input id="path" type="text" class="input-field thin-border announcement-field center" name="path" required>
                             </div>
                             <br>
                             <div class="flex-column">
-                                <label for="description">Περιγραφή</label>
-                                <textarea id="description" class="input-field announcement-field thin-border" name="description" cols="30" rows="10" required></textarea>
+                                <label for="deliverables">Παραδοτέα</label>
+                                <textarea id="deliverables" class="input-field announcement-field thin-border" name="deliverables" cols="30" rows="8" required></textarea>
+                            </div>
+                            <div class="flex-column">
+                                <label for="deadline">Deadline</label>
+                                <input id="deadline" type="date" class="input-field announcement-field thin-border" name="deadline">
                             </div>
                             
                             <button class="sign-btn thin-border teal" type="submit">Προσθήκη</button>

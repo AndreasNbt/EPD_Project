@@ -19,6 +19,17 @@
             ?>
             <div class="description-container thin-border">  
             <?php
+                    session_start();
+                    if ($_SESSION['role'] === 'Tutor' ) {
+                    echo "<div class='announcement'>
+                            <div class='announcement-heading'>
+                                <h4> <a class='important-text' href='tutor_new_project.php'>Προσθήκη νέας εργασίας</a> </h4>
+                            </div>
+                            <div class='announcement-content flex'></div>
+                         </div>";
+                    }
+                ?>
+            <?php
                     include("PHP_Back_End/db_connection.php");
                     $sql = "SELECT id, goals, location, deliverables, deadline FROM projects;";
                     $res = $con->query($sql);
@@ -29,7 +40,7 @@
 
                     mysqli_close($con);
 
-                    function echoProject($id, $goals, $filepath,$deliverables,$deadline) {
+                    function echoProject($id, $goals, $file,$deliverables,$deadline) {
                     echo "<div class='announcement teal'> 
                             <div id='return' class='announcement-heading'>
                                 <h2 class='teal'>Εργασία $id</h2>
@@ -46,7 +57,7 @@
                                 
                                 <p> <strong>Εκφώνηση:</strong> </p>
                                 <div>
-                                    <p class='m0 ml'>    Κατεβάστε την εκφώνηση της εργασίας από <a class='important-text' href='' download=$filepath>εδώ</a>.</p>
+                                    <p class='m0 ml'>    Κατεβάστε την εκφώνηση της εργασίας από <a class='important-text' href='$file' download>εδώ</a>.</p>
                                 </div>
                                 
                                 <p> <strong>Παραδοτέα:</strong> </p>
