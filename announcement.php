@@ -26,7 +26,7 @@
                     if ($_SESSION['role'] === 'Tutor' ) {
                     echo "<div class='announcement'>
                             <div class='announcement-heading'>
-                                <h3> <a class='important-text' href='new_announcement.php'>Προσθήκη νέας ανακοίνωσης</a> </h3>
+                                <h3> <a class='important-text' href='tutor_new_announcement.php'>Προσθήκη νέας ανακοίνωσης</a> </h3>
                             </div>
                             <div class='announcement-content flex'></div>
                          </div>";
@@ -34,19 +34,28 @@
                 ?>
                 <?php
                     include("PHP_Back_End/db_connection.php");
-                    $sql = "SELECT date, subject, content FROM announcements;";
+                    $sql = "SELECT id, date, subject, content FROM announcements;";
                     $res = $con->query($sql);
 
                     while ($announcement = mysqli_fetch_row($res)) {
-                        echoAnnouncement($announcement[0], $announcement[1], $announcement[2]);
+                        echoAnnouncement($announcement[0], $announcement[1], $announcement[2], $announcement[3]);
                     }
 
                     mysqli_close($con);
 
-                    function echoAnnouncement($date, $subject, $content) {
+                    function echoAnnouncement($id, $date, $subject, $content) {
                     echo "<div class='announcement teal'> 
                             <div class='announcement-heading'>
                                 <h2 class='teal'>$subject</h2>
+                                <div class='flex'>
+                                    <form action='tutor_update_announcement.php' action='get'>
+                                        <button class='announcement-button' name='id' value=$id><a class='important-text'>Eπεξεργασία</a></button>
+                                    </form>
+                                    <form action='PHP_Back_End/delete_announcement.php' action='get'>
+                                        <button class='announcement-button' name='id' value=$id><a class='important-text'>Διαγραφή</a></button>
+                                    </form>
+                                </div>
+                                
                             </div>
                             
                             <div class='announcement-content'>
