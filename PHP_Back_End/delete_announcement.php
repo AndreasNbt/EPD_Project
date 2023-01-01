@@ -3,7 +3,6 @@
 
 include 'db_connection.php';
 
-
     $id = $_GET['id'];
 
     $sql = "DELETE FROM announcements

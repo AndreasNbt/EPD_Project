@@ -21,8 +21,19 @@
             ?>
             <div class="description-container thin-border">
                 <?php
+                    session_start();
+                    if ($_SESSION['role'] === 'Tutor' ) {
+                    echo "<div class='announcement'>
+                            <div class='announcement-heading'>
+                                <h4> <a class='important-text' href='tutor_new_document.php'>Προσθήκη νέου εγγράφου</a> </h4>
+                            </div>
+                            <div class='announcement-content flex'></div>
+                         </div>";
+                    }
+                ?>
+                <?php
                         include("PHP_Back_End/db_connection.php");
-                        $sql = "SELECT title, description, location FROM documents;";
+                        $sql = "SELECT title, description, filepath FROM documents;";
                         $res = $con->query($sql);
 
                         while ($document = mysqli_fetch_row($res)) {
@@ -31,7 +42,7 @@
 
                         mysqli_close($con); 
                         
-                        function echoDocument($title, $description, $filepath) {
+                        function echoDocument($title, $description, $file) {
                             echo "
                                 <div class='announcement teal'> 
                                     <div class='announcement-heading'>
@@ -41,7 +52,7 @@
                                     <div class='announcement-content flex'>
                                         <div class='flex-column'>
                                                 <p> <strong>Περιγραφή:</strong> $description </p>
-                                                <a class='mb teal bold' href='#' download=$filepath>Download</a>
+                                                <a class='mb teal bold' href='$file' download>Download</a>
                                         </div>
                                             
                                 </div>";

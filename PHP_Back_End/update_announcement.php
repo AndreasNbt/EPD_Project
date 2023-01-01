@@ -6,30 +6,19 @@ include 'db_connection.php';
 if (isset($_POST['subject']) && isset($_POST['date']) && isset($_POST['content'])) {
 
     $id = $_POST['id'];
-    $subject = trim($_POST['subject']);
+    $subject = $_POST['subject'];
     $date = $_POST['date'];
-    $content = trim($_POST['content']);
+    $content = $_POST['content'];
 
-    if (empty($subject)) {
-        header("Location: ../login.php?error=Subject is required");
-        exit();
-    }
-    else if (empty($content)) {
-        header("Location: ../password.php?error=Password is required");
-        exit();
-    }
-    else {
+    $sql = "UPDATE announcements
+            SET subject='$subject', date='$date', content='$content'
+            WHERE announcements.ID = $id";
 
-        $sql = "UPDATE announcements
-                SET subject='$subject', date='$date', content='$content'
-                WHERE announcements.ID = $id";
+    $con->query($sql);
+    $con -> close();
 
-        $con->query($sql);
-        $con -> close();
+    header("Location: ../announcement.php");
 
-        header("Location: ../announcement.php");
-
-        }
 }
 else {
     header("Location: ../tutor_update_announcement.php");

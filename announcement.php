@@ -26,7 +26,7 @@
                     if ($_SESSION['role'] === 'Tutor' ) {
                     echo "<div class='announcement'>
                             <div class='announcement-heading'>
-                                <h3> <a class='important-text' href='tutor_new_announcement.php'>Προσθήκη νέας ανακοίνωσης</a> </h3>
+                                <h4> <a class='important-text' href='tutor_new_announcement.php'>Προσθήκη νέας ανακοίνωσης</a> </h4>
                             </div>
                             <div class='announcement-content flex'></div>
                          </div>";
