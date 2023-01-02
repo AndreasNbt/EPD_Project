@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/61e165c770.js" crossorigin="anonymous"></script>
-    <title>Εγγράφο Μαθήματος</title>
+    <title>Έγγραφο Μαθήματος</title>
 </head>
 <body>
 
