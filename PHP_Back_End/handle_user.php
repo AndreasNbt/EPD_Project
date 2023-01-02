@@ -3,7 +3,7 @@
 
 include 'db_connection.php';
 
-if (isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['role']) && isset($_POST['type'])) {
+if (isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['role'])) {
 
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];

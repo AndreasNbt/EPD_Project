@@ -3,7 +3,7 @@
 
     include 'db_connection.php';
 
-    if (isset($_POST['subject']) && isset($_POST['date']) && isset($_POST['content']) && isset($_POST['type'])) {
+    if (isset($_POST['subject']) && isset($_POST['date']) && isset($_POST['content'])) {
 
         $subject = $_POST['subject'];
         $date = $_POST['date'];

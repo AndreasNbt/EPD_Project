@@ -17,8 +17,7 @@
         if (mysqli_num_rows($res) === 1 ){
 
             $row = mysqli_fetch_row($res);
-
-            $_SESSION['ID'] = $row[0];
+            
             $_SESSION['role'] = $row[5];
 
             $con -> close();

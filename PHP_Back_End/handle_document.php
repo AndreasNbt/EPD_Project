@@ -2,7 +2,7 @@
 
     include 'db_connection.php';
 
-    if (isset($_POST['title']) && isset($_POST['description']) && isset($_POST['path']) && isset($_POST['type'])) {
+    if (isset($_POST['title']) && isset($_POST['description']) && isset($_POST['path'])) {
 
         $title = $_POST['title'];
         $description = $_POST['description'];
