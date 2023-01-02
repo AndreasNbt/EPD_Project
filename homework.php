@@ -47,10 +47,10 @@
                                 <h2 class='teal'>Εργασία $id</h2>";
                                 if ($_SESSION['role'] === 'Tutor' )  {
                                     echo"<div class='flex'>
-                                            <form action='tutor_document.php' action='get'>
+                                            <form action='tutor_project.php' action='get'>
                                                 <button class='announcement-button' name='id' value=$id><a class='important-text'>Eπεξεργασία</a></button>
                                             </form>
-                                            <form action='PHP_Back_End/handle_document.php' action='get'>
+                                            <form action='PHP_Back_End/handle_project.php' action='get'>
                                                 <input class='hidden' name='type' value='delete'></input>
                                                 <button class='announcement-button' name='id' value=$id><a class='important-text'>Διαγραφή</a></button>
                                             </form>

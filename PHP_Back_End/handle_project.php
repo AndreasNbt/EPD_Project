@@ -12,6 +12,7 @@ if (isset($_POST['goals']) && isset($_POST['path']) && isset($_POST['deliverable
 
     $type = $_POST['type'];
 
+
     if ($type === "add") {
         $sql = "INSERT INTO projects(goals, filepath, deliverables, deadline)
                 VALUES ('$goals', '$path', '$deliverables', '$deadline')";
@@ -33,6 +34,20 @@ else {
     exit();
 }
 $con->query($sql);
+
+$id = $con->insert_id;
+
+if ($type === "add") {
+    $subject = "Υποβλήθηκε η εργασία " . $id;
+    $currentDate = date('Y-m-d');
+    $content = "Η ημερομηνία παράδοσης της εργασίας είναι " . $deadline;
+    $sqlIfAdd = "INSERT INTO announcements(subject, date, content)
+                 VALUES ('$subject', '$currentDate', '$content')";
+
+    $con->query($sqlIfAdd);
+}
+
+
 $con -> close();
 header("Location: ../homework.php");
 
