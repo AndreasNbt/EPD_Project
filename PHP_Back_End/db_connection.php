@@ -3,7 +3,7 @@
 $sname = "localhost";
 $uname = "root";
 $password = "";
-$db_name = "semanticwebpage";
+$db_name = "student3699partB";
 
 $con = mysqli_connect($sname, $uname, $password, $db_name);
 
