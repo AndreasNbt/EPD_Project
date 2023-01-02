@@ -207,7 +207,9 @@ button:hover,.button:hover {
     bottom: 100px;
     margin: auto;
     padding: 20px;
+    min-width: 400px;
     width: 22%;
+    min-height: 400px;
     height: 45%;
     align-items: center;
 }
