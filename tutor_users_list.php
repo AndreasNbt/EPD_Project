@@ -46,9 +46,12 @@
                         function echoUser($id, $firstName, $lastName, $loginame, $password, $role, $fullName) {
                             echo "
                                 <div class='announcement teal'> 
-                                    <div class='announcement-heading'>
-                                        <h2 class='teal'>$fullName</h2>
-                                        <div class='flex'>
+                                    <div class='announcement-heading flex'>
+                                        <div>
+                                            <h2 class='teal'>$fullName</h2>
+                                            <h3 class='secondary'>$role</h3>
+                                        </div>
+                                        <div class='flex pad-top pad-left'>
                                             <form action='tutor_user.php' action='get'>
                                                 <button class='announcement-button' name='id' value=$id><a class='important-text'>Eπεξεργασία</a></button>
                                             </form>

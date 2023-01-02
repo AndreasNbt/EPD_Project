@@ -60,6 +60,10 @@ input:focus, textarea:focus {
     font-weight: bold;
 }
 
+.secondary {
+    color: rgb(3, 73, 73);
+}
+
 .center {
     text-align: center;
 }
@@ -83,6 +87,10 @@ input:focus, textarea:focus {
 
 .header-icon {
     padding-top: 38px;
+}
+
+.pad-top {
+    padding-top: 18px;
 }
 
 .pad-left {
