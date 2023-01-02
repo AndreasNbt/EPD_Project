@@ -45,18 +45,19 @@
                     function echoAnnouncement($id, $date, $subject, $content) {
                     echo "<div class='announcement teal'> 
                             <div class='announcement-heading'>
-                                <h2 class='teal'>$subject</h2>
-                                <div class='flex'>
-                                    <form action='tutor_announcement.php' action='get'>
-                                        <button class='announcement-button' name='id' value=$id><a class='important-text'>Eπεξεργασία</a></button>
-                                    </form>
-                                    <form action='PHP_Back_End/handle_announcement.php' action='get'>
-                                        <input class='hidden' name='type' value='delete'></input>  
-                                        <button class='announcement-button' name='id' value=$id><a class='important-text'>Διαγραφή</a></button>
-                                    </form>
-                                </div>
-                                
-                            </div>
+                                <h2 class='teal'>$subject</h2>";
+                                if ($_SESSION['role'] === 'Tutor' )  {
+                                    echo"<div class='flex'>
+                                            <form action='tutor_announcement.php' action='get'>
+                                                <button class='announcement-button' name='id' value=$id><a class='important-text'>Eπεξεργασία</a></button>
+                                            </form>
+                                            <form action='PHP_Back_End/handle_announcement.php' action='get'>
+                                                <input class='hidden' name='type' value='delete'></input>
+                                                <button class='announcement-button' name='id' value=$id><a class='important-text'>Διαγραφή</a></button>
+                                            </form>
+                                        </div>";
+                                    }
+                                echo"</div>
                             
                             <div class='announcement-content big-border-bottom'>
                                 <p> <strong>Ημερομηνία</strong>: $date</p>
