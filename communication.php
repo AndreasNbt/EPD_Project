@@ -26,7 +26,7 @@
                         <h2 class="teal">Αποστολή email μέσω web φόρμας</h2>
                     </div>
                     
-                    <form action="mailto:tutor@csd.auth.test.gr">
+                    <form action="PHP_Back_End/mailto.php" method="post">
                         <div class="announcement-content flex">
                             <div class="flex-column">
                                 <label class="label" for="#sender"> <strong>Αποστολέας:</strong> </label>
@@ -35,13 +35,13 @@
                             </div>
                             
                             <div class="flex-column inputs-container">
-                                <input class="input comm-field" id="sender" type="text">
-                                <input class="input comm-field" id="subject" type="text">
-                                <textarea class="input comm-field" cols="15" rows="8"></textarea>
+                                <input class="input comm-field" id="sender" name="sender" type="text">
+                                <input class="input comm-field" id="subject" name="subject" type="text">
+                                <textarea class="input comm-field" cols="15" name="message" rows="8"></textarea>
                             </div>
                             
                            <div class="button-container flex">
-                                <button class="button send-button teal bold thin-border" type="submit"> Αποστολή </button>
+                                <button class="button send-button teal bold thin-border" name="submit" type="submit"> Αποστολή </button>
                            </div>   
                         </div>
                     </form>
@@ -53,7 +53,7 @@
                     
                     <div class="announcement-content flex-column">
                         <p>Ενναλακτικά, μπορείτε να επικοινωνήσετε με τον διδάσκοντα στέλνοντας ένα email στην παρακάτω διεύθυνση:</p>
-                        <a class="teal bold mb" href="mailto:tutor@csd.auth.test.gr">tutor@csd.auth.test.gr</a>
+                        <a class="teal bold mb" href="mailto:professor@csd.auth.gr">professor@csd.auth.test.gr</a>
                     </div>
                 </div>
             </div>

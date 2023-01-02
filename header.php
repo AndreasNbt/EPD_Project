@@ -4,8 +4,10 @@
     <div class="flex">             
         <?php
             session_start();
-            if ($_SESSION['role'] === "Tutor") {
-            echo "<a href='tutor_users_list.php' > <i class='fa-solid fa-2xl teal fa-users header-icon pad-right'></i></a>";
+            if (isset($_SESSION['role'])) {
+                if ($_SESSION['role'] === "Tutor") {
+                    echo "<a href='tutor_users_list.php' > <i class='fa-solid fa-2xl teal fa-users header-icon pad-right'></i></a>";
+                }
             }
         ?>
         <a href="PHP_Back_End/logout.php"><i class="fa-solid fa-2xl fa-right-from-bracket header-icon pad-right teal"></i></a>
