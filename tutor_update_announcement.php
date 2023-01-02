@@ -33,7 +33,7 @@
 
         <div class="flex header teal big-border-bottom"> 
             <a href="home_page.php"><i class="fa-sharp fa-2xl fa-solid fa-house header-icon pad-left teal"></i></a>
-            <h1> Ενημέρωση </h1> 
+            <h1> Ενημέρωση Ανακοίνωσης </h1> 
             <a href="PHP_Back_End/logout.php"><i class="fa-solid fa-2xl fa-right-from-bracket header-icon pad-right teal"></i></a>
         </div>
         
@@ -41,7 +41,7 @@
                 <div class="description-container flex-column teal big-border center p0">  
                     <h2 class="teal mb">Συμπληρώστε τα πεδία</h2>
                     <div class="flex-column mt">
-                        <form action="PHP_Back_End/update_announcement.php" method="post">
+                        <form action="PHP_Back_End/handle_announcement.php" method="post">
                             <div class="flex-column">
                                 <label for="email">Θέμα</label>
                                 <?php echo" <input id='email' type='text' class='input-field announcement-field thin-border' name='subject' value='$subject' required>" ?>
@@ -57,7 +57,7 @@
                                 <label for="content">Ανακοίνωση</label>
                                <?php echo" <textarea id='content' class='input-field announcement-field thin-border' name='content' cols='30' rows='10'>$content</textarea>" ?>
                             </div>
-                            
+                            <?php echo" <input class='hidden' name='type' value='update'></input>" ?>   
                           <?php echo" <button class='sign-btn thin-border teal' name='id' value=$announcementID type='submit'>Ενημέρωση</button> " ?>
                         </form>
                     </div>

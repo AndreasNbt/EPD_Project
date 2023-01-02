@@ -22,7 +22,7 @@
                 <div class="description-container flex-column teal big-border center p0">  
                     <h2 class="teal mb">Συμπληρώστε τα πεδία</h2>
                     <div class="flex-column mt">
-                        <form action="PHP_Back_End/add_announcement.php" method="post">
+                        <form action="PHP_Back_End/handle_announcement.php" method="post">
                             <div class="flex-column">
                                 <label for="email">Θέμα</label>
                                 <input id="email" type="text" class="input-field announcement-field thin-border" name="subject" required>
@@ -37,7 +37,8 @@
                                 <label for="content">Ανακοίνωση</label>
                                 <textarea id="content" class="input-field announcement-field thin-border" name="content" cols="30" rows="10"></textarea>
                             </div>
-                            
+
+                            <?php echo" <input class='hidden' name='type' value='add'></input>" ?>  
                             <button class="sign-btn thin-border teal" type="submit">Προσθήκη</button>
                         </form>
                     </div>

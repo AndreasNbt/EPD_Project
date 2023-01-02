@@ -53,7 +53,8 @@
                                     <form action='tutor_update_project.php' action='get'>
                                         <button class='announcement-button' name='id' value=$id><a class='important-text'>Eπεξεργασία</a></button>
                                     </form>
-                                    <form action='PHP_Back_End/delete_project.php' action='get'>
+                                    <form action='PHP_Back_End/handle_project.php' action='get'>
+                                        <input class='hidden' name='type' value='delete'></input>
                                         <button class='announcement-button' name='id' value=$id><a class='important-text'>Διαγραφή</a></button>
                                     </form>
                                 </div>

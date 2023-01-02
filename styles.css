@@ -197,6 +197,10 @@ button:hover,.button:hover {
     margin-top: 20px;
 }
 
+.hidden {
+    display: none;
+}
+
 .important-text {
     color: rgb(133, 50, 50);
     font-weight: bold;

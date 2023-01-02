@@ -19,7 +19,7 @@
             <div class="login-container flex-column teal big-border center">  
                 <h2 class="teal mb">Συμπληρώστε τα στοιχεία σας</h2>
                 <div class="flex-column inputs-container mt">
-                    <form action="PHP_Back_End/loginb.php" method="post">
+                    <form action="PHP_Back_End/login.php" method="post">
                         <div class="flex-column">
                             <label for="email">Email</label>
                             <input id="email" type="text" class="input-field announcement-field thin-border" name="email" required>

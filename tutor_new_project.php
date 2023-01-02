@@ -22,7 +22,7 @@
                 <div class="description-container flex-column teal big-border center p0">  
                     <h2 class="teal mb">Συμπληρώστε τα πεδία</h2>
                     <div class="flex-column mt">
-                        <form action="PHP_Back_End/add_project.php" method="post">
+                        <form action="PHP_Back_End/handle_project.php" method="post">
                             <div class="flex-column">
                                 <label for="goals">Στόχοι</label>
                                 <textarea id="goals" type="text" class="input-field announcement-field thin-border" name="goals" cols="30" rows="8" required></textarea>
@@ -41,7 +41,8 @@
                                 <label for="deadline">Deadline</label>
                                 <input id="deadline" type="date" class="input-field announcement-field thin-border" name="deadline">
                             </div>
-                            
+
+                             <?php echo"<input class='hidden' name='type' value='add'></input>"; ?>
                             <button class="sign-btn thin-border teal" type="submit">Προσθήκη</button>
                         </form>
                     </div>

@@ -22,7 +22,7 @@
                 <div class="description-container flex-column teal big-border center p0">  
                     <h2 class="teal mb">Συμπληρώστε τα πεδία</h2>
                     <div class="flex-column mt">
-                        <form action="PHP_Back_End/add_document.php" method="post">
+                        <form action="PHP_Back_End/handle_document.php" method="post">
                             <div class="flex-column">
                                 <label for="title">Τίτλος</label>
                                 <input id="title" type="text" class="input-field announcement-field thin-border" name="title" required>
@@ -38,6 +38,7 @@
                                 <textarea id="description" class="input-field announcement-field thin-border" name="description" cols="30" rows="10" required></textarea>
                             </div>
                             
+                            <?php echo" <input class='hidden' name='type' value='add'></input>" ?>  
                             <button class="sign-btn thin-border teal" type="submit">Προσθήκη</button>
                         </form>
                     </div>
