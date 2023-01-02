@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/61e165c770.js" crossorigin="anonymous"></script>
     <title>Αρχική Σελίδα</title>
 </head>
 <body>
     
     <div class="main flex-column">
-        <div class="header teal big-border-bottom"> 
+        <div class="flex header teal big-border-bottom"> 
+            <a href="home_page.php"><i class="fa-sharp fa-2xl fa-solid fa-house header-icon pad-left teal"></i></a>
             <h1> Αρχική Σελίδα </h1> 
+            <a href="PHP_Back_End/logout.php"><i class="fa-solid fa-2xl fa-right-from-bracket header-icon pad-right teal"></i></a>
         </div>
             
         <div class="content">
@@ -30,7 +33,7 @@
                     
                 <br>
                 <div class="img">
-                    <a href="#"><img class="thin-border" src="Semantic-Web-Explained.png" height="300" alt=""></a>
+                    <a href="#"><img class="thin-border" src="Files/Semantic-Web-Explained.png" height="300" alt=""></a>
                 </div>
                     
             </div>

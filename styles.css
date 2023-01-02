@@ -76,8 +76,21 @@ input:focus, textarea:focus {
 }
 
 .header {
+    justify-content: space-between;
     text-align: center;
     margin: 0;
+}
+
+.header-icon {
+    padding-top: 38px;
+}
+
+.pad-left {
+    padding-left: 27px;
+}
+
+.pad-right {
+    padding-right: 30px;
 }
 
 .main {
