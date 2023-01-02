@@ -11,20 +11,10 @@
 <body>
     
     <div class="main flex-column">
-
-        <div class="flex header teal big-border-bottom"> 
-            <a href="home_page.php"><i class="fa-sharp fa-2xl fa-solid fa-house header-icon pad-left teal"></i></a>
-            <h1> Εγγεγραμένοι Χρήστες </h1> 
-            <div class="flex">             
-                <?php
-                    session_start();
-                    if ($_SESSION['role'] === "Tutor") {
-                    echo "<a href='tutor_users_list.php' > <i class='fa-solid fa-2xl teal fa-users header-icon pad-right'></i></a>";
-                    }
-                ?>
-                <a href="PHP_Back_End/logout.php"><i class="fa-solid fa-2xl fa-right-from-bracket header-icon pad-right teal"></i></a>
-            </div>
-        </div>
+        <?php
+            $page_title = "Εγγεγραμένοι Χρήστες";
+            include "header.php";
+        ?>
         
         <div class="content">
             <?php 
@@ -32,7 +22,6 @@
             ?>
             <div class="description-container thin-border">
                 <?php
-                    session_start();
                     if ($_SESSION['role'] === 'Tutor' ) {
                     echo "<div class='announcement'>
                             <div class='announcement-heading'>
@@ -48,7 +37,7 @@
                         $res = $con->query($sql);
 
                         while ($user = mysqli_fetch_row($res)) {
-                            $fullName = $user[1] + " " + $user[2];
+                            $fullName = $user[1] . " " . $user[2];
                             echoUser($user[0], $user[1], $user[2], $user[3], $user[4], $user[5], $fullName);
                         }
 

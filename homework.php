@@ -9,14 +9,9 @@
     <title>Εργασίες</title>
 </head>
 <body>
-
-    <?php 
-        $page_title = "Εργασίες"
-    ?>
-    
-    <div class="main flex-column">
-
+   <div class="main flex-column">
         <?php
+            $page_title = "Εργασίες";
             include "header.php";
         ?>
         
@@ -26,7 +21,6 @@
             ?>
             <div class="description-container thin-border">  
             <?php
-                    session_start();
                     if ($_SESSION['role'] === 'Tutor' ) {
                     echo "<div class='announcement'>
                             <div class='announcement-heading'>

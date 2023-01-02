@@ -9,13 +9,9 @@
     <title>Επικοινωνία</title>
 </head>
 <body>
-
-    <?php 
-        $page_title = "Επικοινωνία"
-    ?>
-
     <div class="main flex-column">
         <?php
+            $page_title = "Επικοινωνία";
             include "header.php";
         ?>
         

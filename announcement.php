@@ -8,14 +8,10 @@
     <script src="https://kit.fontawesome.com/61e165c770.js" crossorigin="anonymous"></script>
     <title>Ανακοινώσεις</title>
 </head>
-<body>
-
-    <?php 
-        $page_title = "Ανακοινώσεις"
-    ?>
-    
+<body>    
     <div class="main flex-column">
         <?php
+            $page_title = "Ανακοινώσεις";
             include "header.php";
         ?>
         
@@ -26,7 +22,6 @@
             
             <div class="description-container thin-border"> 
                 <?php
-                    session_start();
                     if ($_SESSION['role'] === 'Tutor' ) {
                     echo "<div class='announcement'>
                             <div class='announcement-heading'>

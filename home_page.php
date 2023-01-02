@@ -9,13 +9,9 @@
     <title>Αρχική Σελίδα</title>
 </head>
 <body>
-
-    <?php 
-        $page_title = "Αρχική Σελίδα"
-    ?>
-    
     <div class="main flex-column">
         <?php
+            $page_title = "Αρχική Σελίδα";
             include "header.php";
         ?>
             
