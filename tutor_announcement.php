@@ -14,18 +14,31 @@
 
         include "PHP_Back_End/db_connection.php";
 
-        $announcementID = $_GET['id'];
+        $page_title = "Προσθήκη νέας ανακοίνωσης";
+        $value = "add";
 
-        $sql = "SELECT subject, date, content
-                FROM announcements
-                WHERE announcements.ID = $announcementID";
+        $subject = "";
+        $date = "";
+        $content = "";
 
-        $res = $con->query($sql);
-        $row = mysqli_fetch_row($res);
+        if (isset($_GET['id'])) {
+            $announcementID = $_GET['id'];
+            $page_title = "Ενημέρωση ανακοίνωσης";
+            $value = "update";
 
-        $subject = $row[0];
-        $date = $row[1];
-        $content = $row[2];
+            $sql = "SELECT subject, date, content
+                    FROM announcements
+                    WHERE announcements.ID = $announcementID";
+
+            $res = $con->query($sql);
+            $row = mysqli_fetch_row($res);
+
+            $subject = $row[0];
+            $date = $row[1];
+            $content = $row[2];
+
+            $con -> close();
+        }
 
     ?>
     
@@ -33,7 +46,7 @@
 
         <div class="flex header teal big-border-bottom"> 
             <a href="home_page.php"><i class="fa-sharp fa-2xl fa-solid fa-house header-icon pad-left teal"></i></a>
-            <h1> Ενημέρωση Ανακοίνωσης </h1> 
+            <?php echo"<h1> $page_title </h1>" ?> 
             <a href="PHP_Back_End/logout.php"><i class="fa-solid fa-2xl fa-right-from-bracket header-icon pad-right teal"></i></a>
         </div>
         
@@ -55,10 +68,17 @@
                             <br>
                             <div class="flex-column">
                                 <label for="content">Ανακοίνωση</label>
-                               <?php echo" <textarea id='content' class='input-field announcement-field thin-border' name='content' cols='30' rows='10'>$content</textarea>" ?>
+                               <?php echo" <textarea id='content' class='input-field announcement-field thin-border' name='content' cols='30' rows='10' required>$content</textarea>" ?>
                             </div>
-                            <?php echo" <input class='hidden' name='type' value='update'></input>" ?>   
-                          <?php echo" <button class='sign-btn thin-border teal' name='id' value=$announcementID type='submit'>Ενημέρωση</button> " ?>
+                            <?php 
+                                echo" <input class='hidden' name='type' value='$value'></input>";
+                                if ($value === "add") {
+                                    echo"<button class='sign-btn thin-border teal' type='submit'>Προσθήκη</button>";
+                                }
+                                else if ($value === "update") {
+                                    echo " <button class='sign-btn thin-border teal' name='id' value=$announcementID type='submit'>Ενημέρωση</button>"; 
+                                } 
+                            ?>
                         </form>
                     </div>
                         <br>

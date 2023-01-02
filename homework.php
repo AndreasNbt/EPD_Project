@@ -28,7 +28,7 @@
                     if ($_SESSION['role'] === 'Tutor' ) {
                     echo "<div class='announcement'>
                             <div class='announcement-heading'>
-                                <h4> <a class='important-text' href='tutor_new_project.php'>Προσθήκη νέας εργασίας</a> </h4>
+                                <h4> <a class='important-text' href='tutor_project.php'>Προσθήκη νέας εργασίας</a> </h4>
                             </div>
                             <div class='announcement-content big-border-bottom flex'></div>
                          </div>";
@@ -50,7 +50,7 @@
                             <div class='announcement-heading'>
                                 <h2 class='teal'>Εργασία $id</h2>
                                 <div class='flex'>
-                                    <form action='tutor_update_project.php' action='get'>
+                                    <form action='tutor_project.php' action='get'>
                                         <button class='announcement-button' name='id' value=$id><a class='important-text'>Eπεξεργασία</a></button>
                                     </form>
                                     <form action='PHP_Back_End/handle_project.php' action='get'>

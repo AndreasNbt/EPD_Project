@@ -14,26 +14,38 @@
 
         include "PHP_Back_End/db_connection.php";
 
-        $documentID = $_GET['id'];
+        $page_title = "Προσθήκη νέου εγγράφου";
+        $value = "add";
 
-        $sql = "SELECT title, filepath, description
-                FROM documents
-                WHERE documents.ID = $documentID";
+        $title = "";
+        $path = "";
+        $description = "";
 
-        $res = $con->query($sql);
-        $row = mysqli_fetch_row($res);
+        if (isset($_GET['id'])) {
+            $documentID = $_GET['id'];
+            $page_title = "Ενημέρωση εγγράφου";
+            $value = "update";
 
-        $title = $row[0];
-        $path = $row[1];
-        $description = $row[2];
+            $sql = "SELECT title, filepath, description
+                    FROM documents
+                    WHERE documents.ID = $documentID";
 
+            $res = $con->query($sql);
+            $row = mysqli_fetch_row($res);
+
+            $title = $row[0];
+            $path = $row[1];
+            $description = $row[2];
+
+            $con -> close();
+        }
     ?>
     
     <div class="main flex-column">
 
         <div class="flex header teal big-border-bottom"> 
             <a href="home_page.php"><i class="fa-sharp fa-2xl fa-solid fa-house header-icon pad-left teal"></i></a>
-            <h1> Ενημέρωση Εγγράφου </h1> 
+            <?php echo"<h1> $page_title </h1>" ?> 
             <a href="PHP_Back_End/logout.php"><i class="fa-solid fa-2xl fa-right-from-bracket header-icon pad-right teal"></i></a>
         </div>
         
@@ -57,9 +69,15 @@
                                 <label for="description">Περιγραφή</label>
                                <?php echo" <textarea id='description' class='input-field announcement-field thin-border' name='description' cols='30' rows='10'>$description</textarea>" ?>
                             </div>
-                            
-                            <?php echo" <input class='hidden' name='type' value='update'></input>" ?>  
-                            <?php echo" <button class='sign-btn thin-border teal' name='id' value=$documentID type='submit'>Ενημέρωση</button> " ?>
+                            <?php 
+                                echo" <input class='hidden' name='type' value='$value'></input>";
+                                if ($value === "add") {
+                                    echo"<button class='sign-btn thin-border teal' type='submit'>Προσθήκη</button>";
+                                }
+                                else if ($value === "update") {
+                                    echo " <button class='sign-btn thin-border teal' name='id' value=$documentID type='submit'>Ενημέρωση</button>"; 
+                                } 
+                            ?>
                         </form>
                     </div>
                         <br>

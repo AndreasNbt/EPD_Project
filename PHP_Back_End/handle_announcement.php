@@ -27,10 +27,6 @@
         $sql = "DELETE FROM announcements
                 WHERE announcements.ID = $id";
     }
-    else {
-        header("Location: ../tutor_new_announcement.php");
-        exit();
-    }
     $con->query($sql);
     $con -> close();
     header("Location: ../announcement.php");
