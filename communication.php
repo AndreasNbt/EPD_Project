@@ -9,14 +9,15 @@
     <title>Επικοινωνία</title>
 </head>
 <body>
-    
-    <div class="main flex-column">
 
-        <div class="flex header teal big-border-bottom"> 
-            <a href="home_page.php"><i class="fa-sharp fa-2xl fa-solid fa-house header-icon pad-left teal"></i></a>
-            <h1> Επικοινωνία </h1> 
-            <a href="PHP_Back_End/logout.php"><i class="fa-solid fa-2xl fa-right-from-bracket header-icon pad-right teal"></i></a>
-        </div>
+    <?php 
+        $page_title = "Επικοινωνία"
+    ?>
+
+    <div class="main flex-column">
+        <?php
+            include "header.php";
+        ?>
         
         <div class="content">
             <?php 

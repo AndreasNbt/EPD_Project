@@ -9,13 +9,15 @@
     <title>Αρχική Σελίδα</title>
 </head>
 <body>
+
+    <?php 
+        $page_title = "Αρχική Σελίδα"
+    ?>
     
     <div class="main flex-column">
-        <div class="flex header teal big-border-bottom"> 
-            <a href="home_page.php"><i class="fa-sharp fa-2xl fa-solid fa-house header-icon pad-left teal"></i></a>
-            <h1> Αρχική Σελίδα </h1> 
-            <a href="PHP_Back_End/logout.php"><i class="fa-solid fa-2xl fa-right-from-bracket header-icon pad-right teal"></i></a>
-        </div>
+        <?php
+            include "header.php";
+        ?>
             
         <div class="content">
             <?php 
